@@ -17,17 +17,10 @@ pipeline{
     stages{
         //流水线的所有阶段
         //语法：单引号中可以写常量，双引号可以写变量（通过$来获取变量的值）
-
-        //1、编译
-        stage('编译'){
+        //0、编译
+        stage('环境检查'){
             steps{
-                echo " 编译了..."
-                echo "$key"
-                //这样写也行 echo "${hello}"
-                echo "$hello"
-                sh 'pwd && ls -alh' // a：列举所有；l：逐条列举；h：以人类识别的方式
                 sh 'printenv'
-
                 sh "echo $JENKINS_HOME"
                 echo "$JENKINS_HOME"
 
@@ -37,6 +30,17 @@ pipeline{
                 sh "java -version"
                 sh "docker version"
                 sh 'mvn -v'
+            }
+        }
+
+        //1、编译
+        stage('编译'){
+            steps{
+                echo " 编译了..."
+                echo "$key"
+                //这样写也行 echo "${hello}"
+                echo "$hello"
+                sh 'pwd && ls -alh' // a：列举所有；l：逐条列举；h：以人类识别的方式
             }
         }
 
