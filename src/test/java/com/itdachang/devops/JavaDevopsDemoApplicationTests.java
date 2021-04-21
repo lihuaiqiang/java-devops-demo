@@ -1,4 +1,4 @@
-package com.itdachang.javadevopsdemo;
+package com.itdachang.devops;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

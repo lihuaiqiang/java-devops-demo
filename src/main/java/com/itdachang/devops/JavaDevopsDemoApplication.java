@@ -1,4 +1,4 @@
-package com.itdachang.javadevopsdemo;
+package com.itdachang.devops;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
