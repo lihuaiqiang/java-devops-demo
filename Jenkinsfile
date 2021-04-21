@@ -23,7 +23,10 @@ pipeline{
             steps{
                 echo " 编译了..."
                 echo "$key"
+                //这样写也行 echo "${hello}"
                 echo "$hello"
+                sh 'pwd && ls -alh' // a：列举所有；l：逐条列举；h：以人类识别的方式
+                sh 'printenv'
             }
         }
 
