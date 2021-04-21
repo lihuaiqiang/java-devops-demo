@@ -34,12 +34,24 @@ pipeline{
 
         //1、编译
         stage('编译'){
+            //jenkins不配置任何环境的情况下， 仅适用docker 兼容所有场景
+            agent {
+                docker {
+                    image 'maven:3-alpine'
+                    //设置挂载
+                    //args '-v /var/jenkins_home/appconfig/maven/.m2:/root/.m2'
+                    //args  '-v /a/settings.xml:/app/settings.xml'
+                    //docker run -v /a/settings.xml:/app/settings.xml
+                 }
+            }
             steps{
                 echo " 编译了..."
                 echo "$key"
                 //这样写也行 echo "${hello}"
                 echo "$hello"
                 sh 'pwd && ls -alh' // a：列举所有；l：逐条列举；h：以人类识别的方式
+
+                sh 'mvn -v'
             }
         }
 
