@@ -32,6 +32,7 @@ pipeline{
             }
         }
 
+
         //1、编译
         stage('编译'){
             //jenkins不配置任何环境的情况下， 仅适用docker 兼容所有场景
