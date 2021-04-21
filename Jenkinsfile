@@ -30,6 +30,8 @@ pipeline{
 
                 sh "echo $JENKINS_HOME"
                 echo "$JENKINS_HOME"
+
+                sh "echo $WORKSPACE"
             }
         }
 
