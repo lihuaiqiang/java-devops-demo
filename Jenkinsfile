@@ -27,6 +27,9 @@ pipeline{
                 echo "$hello"
                 sh 'pwd && ls -alh' // a：列举所有；l：逐条列举；h：以人类识别的方式
                 sh 'printenv'
+
+                sh "echo $JENKINS_HOME"
+                echo "$JENKINS_HOME"
             }
         }
 
