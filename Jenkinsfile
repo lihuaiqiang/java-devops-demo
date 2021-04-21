@@ -12,20 +12,19 @@ pipeline{
       hello = "大家好"
     }
 
-
     //定义流水线的加工流程
     stages{
         //流水线的所有阶段
         //语法：单引号中可以写常量，双引号可以写变量（通过$来获取变量的值）
+
         //0、编译
         stage('环境检查'){
             steps{
+                //打印环境变量
                 sh 'printenv'
                 sh "echo $JENKINS_HOME"
                 echo "$JENKINS_HOME"
-
                 sh "echo $WORKSPACE"
-
                 sh "git --version"
                 sh "java -version"
                 sh "docker version"
