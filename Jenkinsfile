@@ -1,4 +1,4 @@
-//写流水线的脚本（声明式、脚本式）
+//写流水线的脚本（声明式、脚本式，常用声明式因为声明式中也可以写脚本）
 
 pipeline{
     //全部的 CICD 流程都需要在这里定义
@@ -7,6 +7,10 @@ pipeline{
     agent any
 
     //定义一些环境信息
+    environment {
+      key = "nihao"
+      hello = "大家好"
+    }
 
 
     //定义流水线的加工流程
@@ -18,6 +22,8 @@ pipeline{
         stage('编译'){
             steps{
                 echo " 编译了..."
+                echo "$key"
+                echo "$hello"
             }
         }
 
