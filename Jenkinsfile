@@ -32,6 +32,10 @@ pipeline{
                 echo "$JENKINS_HOME"
 
                 sh "echo $WORKSPACE"
+
+                sh "git --version"
+                sh "java -version"
+                sh "docker version"
             }
         }
 
